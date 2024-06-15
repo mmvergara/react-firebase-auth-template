@@ -17,7 +17,7 @@ const HomePage = () => {
         <Link to="/protected">Protected Page 🛡️</Link>
         <div id="divider"></div>
         <Link
-          to="https://github.com/mmvergara/mmv-nextjs-discord-bot-template"
+          to="https://github.com/mmvergara/react-firebase-auth-template"
           target="_blank"
           rel="noreferrer noopener"
           id="github-repo-link"
