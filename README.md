@@ -1,5 +1,7 @@
 # React Firebase Auth with Protected Routes
 
+[**`🌐 App Demo`**](https://react-firebase-auth-templ-mmvergaras-projects.vercel.app/)
+
 <p align="center">
 <img src="remove_me.png" width="450">
 </p>
