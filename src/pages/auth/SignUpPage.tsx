@@ -18,7 +18,6 @@ const SignUpPage = () => {
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,6 +45,15 @@ const SignUpPage = () => {
       </Link>
       <form className="main-container" onSubmit={handleSubmit}>
         <h1 className="header-text">Sign Up</h1>
+        <p
+          style={{
+            textAlign: "center",
+            fontSize: "0.8rem",
+            color: "#777",
+          }}
+        >
+          Demo app, please don't use your real email or password
+        </p>
         <input
           name="email"
           onChange={handleInputChange}
@@ -57,12 +65,6 @@ const SignUpPage = () => {
           onChange={handleInputChange}
           type="password"
           placeholder="Password"
-        />
-        <input
-          name="confirmPassword"
-          onChange={handleInputChange}
-          type="password"
-          placeholder="Confirm Password"
         />
         <button type="submit">Create Account</button>
         <Link className="auth-link" to="/auth/sign-in">
