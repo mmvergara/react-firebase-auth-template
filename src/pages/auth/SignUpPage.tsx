@@ -1,7 +1,20 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { FirebaseAuth } from "../../firebase";
+import { FirebaseError } from "firebase/app";
+import { useUser } from "../../context/AuthContext";
 
 const SignUpPage = () => {
+  // ==============================
+  // If user is already logged in, redirect to home
+  // This logic is being repeated in SignIn and SignUp..
+  const { user } = useUser();
+  if (user) return <Navigate to="/" />;
+  // maybe we can create a wrapper component for these pages
+  // just like the ./router/AuthProtectedRoute.tsx?
+  // ==============================
+
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
@@ -12,9 +25,18 @@ const SignUpPage = () => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formValues);
+    try {
+      await createUserWithEmailAndPassword(
+        FirebaseAuth,
+        formValues.email,
+        formValues.password
+      );
+    } catch (e) {
+      const error = e as FirebaseError;
+      alert(error.message);
+    }
   };
 
   return (
