@@ -7,8 +7,9 @@
 ## Features
 
 - 🚀 Protected Routes
-- 🚀 User Authentication
 - 🚀 Firebase User Object in Global Context via `useUser`
+- 🚀 User Authentication
+- 🚀 Routing
 
 It's also blazingly fast 🔥 No really, [try it out for yourself.](https://react-firebase-auth-templ-mmvergaras-projects.vercel.app/)
 
