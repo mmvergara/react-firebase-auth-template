@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { useUser } from "./context/AuthContext";
-import NotFoundPage from "./pages/404Page";
+import { useUser } from "../context/AuthContext";
+import NotFoundPage from "../pages/404Page";
 
-const AuthProtectedRouteWrapper = () => {
+const AuthProtectedRoute = () => {
   const { user } = useUser();
   if (!user) {
     // or you can redirect to a different page and show a message
@@ -11,4 +11,4 @@ const AuthProtectedRouteWrapper = () => {
   return <Outlet />;
 };
 
-export default AuthProtectedRouteWrapper;
+export default AuthProtectedRoute;
