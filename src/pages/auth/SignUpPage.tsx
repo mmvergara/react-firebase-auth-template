@@ -12,7 +12,7 @@ const SignUpPage = () => {
   const { user } = useUser();
   if (user) return <Navigate to="/" />;
   // maybe we can create a wrapper component for these pages
-  // just like the ./router/AuthProtectedRoute.tsx?
+  // just like the ./router/AuthProtectedRoute.tsx? up to you.
   // ==============================
 
   const [formValues, setFormValues] = useState({
