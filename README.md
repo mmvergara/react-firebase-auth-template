@@ -1,6 +1,10 @@
 # React Firebase Auth with Protected Routes
 
-##
+<p align="center">
+<img src="remove_me.png" width="450">
+</p>
+
+## Features
 
 - 🚀 Protected Routes
 - 🚀 User Authentication
