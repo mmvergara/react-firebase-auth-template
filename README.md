@@ -17,8 +17,7 @@ It's also blazingly fast 🔥 No really, [try it out for yourself.](https://reac
 
 ## What you need to know
 
-> in `./src`
-
 - `/router/index.tsx` is where you declare your routes
 - `/context/AuthContext.tsx` is where you can find the `useUser` hook
+  - This hook gives you access to the `user` object from Firebase Auth globally
 - `/Providers.tsx` is where you can add more `providers` or `wrappers`
