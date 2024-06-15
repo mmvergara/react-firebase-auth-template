@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useUser } from "../context/AuthContext";
+import { FirebaseAuth } from "../firebase";
 
 const HomePage = () => {
   const { user } = useUser();
@@ -7,8 +8,12 @@ const HomePage = () => {
     <main>
       <section className="main-container">
         <h1 className="header-text">React Firebase Auth Template</h1>
-        <p>Current User : {user?.displayName || "None"}</p>
-        <Link to="/auth/sign-in">Sign In</Link>
+        <p>Current User : {user?.email || "None"}</p>
+        {user ? (
+          <button onClick={() => FirebaseAuth.signOut()}>Sign Out</button>
+        ) : (
+          <Link to="/auth/sign-in">Sign In</Link>
+        )}
         <Link to="/protected">Protected Page 🛡️</Link>
         <div id="divider"></div>
         <Link
