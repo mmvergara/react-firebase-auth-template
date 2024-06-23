@@ -1,4 +1,7 @@
-# React Firebase Auth with Protected Routes
+<p align="center">
+<h1 align="center">React Firebase Auth with Protected Routes</h1>
+</p>
+
 
 [**`🌐 App Demo`**](https://react-firebase-auth-templ-mmvergaras-projects.vercel.app/)
 
@@ -15,6 +18,7 @@
 
 It's also blazingly fast 🔥 No really, [try it out for yourself.](https://react-firebase-auth-templ-mmvergaras-projects.vercel.app/)
 
+[We also have a similar template for SUPABASE💚🍀](https://github.com/mmvergara/react-supabase-auth-template)
 ## Getting Started
 
 1. Clone the repository
