@@ -4,23 +4,19 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif !important;
 }
-
 body {
-  background-color: #ffbf78;
+  background-color: hsl(240, 4%, 9%);
   color: white;
 }
-
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10vh;
 }
-
 a {
   text-decoration: none;
 }
-
 .header-text {
   display: flex;
   gap: 0.5em;
@@ -30,19 +26,21 @@ a {
   background: none;
   text-align: center;
 }
-
 .main-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #18181b;
+  background-color: hsl(240, 4%, 12%);
   padding: 2em 2em;
   width: 100%;
   max-width: 500px;
   border-radius: 2px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.2);
+  border-top: 5px;
+  border-width: 10px 0px 0px 0px;
+  border-style: solid;
+  border-color: #ffca28; /* Changed to Firebase yellow */
 }
-
 #github-repo-link {
   display: flex;
   gap: 0.5em;
@@ -52,13 +50,11 @@ a {
   font-weight: bold;
   background: none;
   cursor: pointer;
-  color: white;
-  background-color: #29292e;
-  border-radius: 0.125em;
+  color: hsl(45, 100%, 53%); /* Changed to Firebase yellow */
 }
 
 #github-repo-link:hover {
-  background-color: #333;
+  background-color: rgba(255, 202, 40, 0.2); /* Firebase yellow with opacity */
 }
 
 input {
@@ -66,14 +62,13 @@ input {
   border-radius: 0.125rem;
   outline: none;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  background-color: hsl(0, 0%, 14%);
+  background-color: hsl(240, 3%, 9%);
   border: 0;
   font-size: 1rem;
   color: white;
   margin-top: 7px;
   width: 300px;
 }
-
 button,
 a {
   font-size: 16px;
@@ -81,7 +76,7 @@ a {
   background: none;
   cursor: pointer;
   color: white;
-  background: #e36414;
+  background: #eb9500;
   border: none;
   border-radius: 0.125em;
   transition: background-color 0.3s;
@@ -92,12 +87,13 @@ a {
   justify-content: center;
   align-items: center;
   height: 40px;
-}
-button:hover,
-a:hover {
-  background: #f8751e;
+  font-weight: bold;
 }
 
+button:hover,
+a:hover {
+  background: #ff8f00; /* Darker Firebase orange for hover */
+}
 .home-link {
   margin-bottom: 1em;
 }
@@ -108,10 +104,10 @@ a:hover {
   background: transparent;
   text-decoration: underline;
 }
-
 #divider {
   width: 70%;
-  height: 1px;
-  background-color: #333;
+  height: 2px;
+  background-color: #ffa000; /* Changed to Firebase orange */
   margin: 1em 0;
+  border-radius: 100%;
 }
