@@ -14,7 +14,7 @@ const SignUpPage = () => {
   // maybe we can create a wrapper component for these pages
   // just like the ./router/AuthProtectedRoute.tsx? up to you.
   // ==============================
-
+  const [status, setStatus] = useState("");
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
@@ -26,6 +26,8 @@ const SignUpPage = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setStatus("");
+    setStatus("Creating account...");
     try {
       await createUserWithEmailAndPassword(
         FirebaseAuth,
@@ -36,6 +38,7 @@ const SignUpPage = () => {
       const error = e as FirebaseError;
       alert(error.message);
     }
+    setStatus("");
   };
 
   return (
@@ -70,6 +73,7 @@ const SignUpPage = () => {
         <Link className="auth-link" to="/auth/sign-in">
           Already have an account? Sign In
         </Link>
+        {status && <p>{status}</p>}
       </form>
     </main>
   );

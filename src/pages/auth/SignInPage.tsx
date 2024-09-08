@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { FirebaseAuth } from "../../firebase";
 import { useUser } from "../../context/AuthContext";
+import { FirebaseError } from "firebase/app";
 
 const SignInPage = () => {
   // ==============================
@@ -13,6 +14,7 @@ const SignInPage = () => {
   // maybe we can create a wrapper component for these pages
   // just like the ./router/AuthProtectedRoute.tsx? up to you.
   // ==============================
+  const [status, setStatus] = useState("");
   const [formValues, setFormValues] = useState({
     email: "",
     password: "",
@@ -24,16 +26,19 @@ const SignInPage = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setStatus("");
+    setStatus("Logging in...");
     try {
       await signInWithEmailAndPassword(
         FirebaseAuth,
         formValues.email,
         formValues.password
       );
-    } catch (error) {
-      console.error(error);
+    } catch (e) {
+      const error = e as FirebaseError;
+      alert(error.message);
     }
+    setStatus("");
   };
   return (
     <main>
@@ -58,6 +63,7 @@ const SignInPage = () => {
         <Link className="auth-link" to="/auth/sign-up">
           Don't have an account? Sign Up
         </Link>
+        {status && <p>{status}</p>}
       </form>
     </main>
   );
